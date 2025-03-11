@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## Project Planning Document
+
+Additionally, let's create a `docs/PLAN.md` file that outlines our development approach:
+
+```markdown
+# Portfolio Development Plan
+
+This document outlines the phased approach to developing my professional portfolio website.
+
+## Phase 1: Foundation
+
+- Project initialization with Next.js
+- Git repository setup with branch protection
+- Basic folder structure and component organization
+- Tailwind CSS configuration for design system
+- Core layout implementation (header, footer)
+
+## Phase 2: Core Sections
+
+- Hero section with professional introduction
+- Projects showcase with filtering capabilities
+- Skills visualization organized by category
+- Experience timeline showing professional journey
+- Contact section with form validation
+
+## Phase 3: Advanced Features
+
+- Sandbox demonstrations for technical skills
+- Blog infrastructure for technical articles
+- Interactive elements and animations
+- Dark/light mode implementation
+- Responsive design optimizations
+
+## Phase 4: Refinement
+
+- Performance optimization
+- Accessibility improvements
+- SEO implementation
+- Cross-browser testing
+- Final deployment and domain setup
+
+## Implementation Details
+
+Each phase will be developed on feature branches and merged via pull requests to ensure code quality and maintainability.

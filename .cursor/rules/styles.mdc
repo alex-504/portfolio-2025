@@ -1,0 +1,87 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Styling Guidelines
+
+## Tailwind Usage
+- Use Tailwind utility classes for styling
+- Follow the utility-first approach
+- Use consistent spacing scale
+
+## Class Organization
+- Group related classes together
+- Layout → Spacing → Typography → Visual → Interactive
+- Extract complex patterns to components
+
+## Custom Utilities
+- Define custom utilities in tailwind.config.js
+- Create consistent component styles
+
+## Dark Mode Support
+- Always provide dark mode variants
+- Test contrast in both light and dark modes
+
+## Example Hero Section
+```tsx
+<section className="
+  relative
+  w-full min-h-screen
+  flex flex-col items-center justify-center
+  px-4 py-16 md:py-24
+  bg-gradient-to-br from-white to-gray-100
+  dark:from-gray-900 dark:to-gray-800
+  overflow-hidden
+">
+  <div className="
+    container mx-auto max-w-4xl
+    flex flex-col md:flex-row items-center
+    gap-8 md:gap-16
+  ">
+    <div className="flex-1">
+      <h1 className="
+        text-4xl md:text-5xl lg:text-6xl
+        font-bold tracking-tight
+        text-gray-900 dark:text-white
+        mb-4
+      ">
+        Alexandre Vieira
+      </h1>
+      <h2 className="
+        text-xl md:text-2xl
+        font-medium
+        text-blue-600 dark:text-blue-400
+        mb-6
+      ">
+        Software Engineer
+      </h2>
+      <p className="
+        text-gray-700 dark:text-gray-300
+        text-lg
+        mb-8
+      ">
+        Specialized in backend development and DevOps, 
+        focusing on infrastructure monitoring and optimization.
+      </p>
+      <div className="flex gap-4">
+        <Button 
+          variant="primary"
+          href="#projects"
+        >
+          View Projects
+        </Button>
+        <Button 
+          variant="secondary"
+          href="#contact"
+        >
+          Get in Touch
+        </Button>
+      </div>
+    </div>
+    
+    <div className="flex-1 relative">
+      {/* Technical skills visualization */}
+    </div>
+  </div>
+</section>

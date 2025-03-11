@@ -1,0 +1,87 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Component Guidelines
+
+## Component Structure
+- Import statements at top
+- Type definitions
+- Component implementation
+- Export statement
+
+## Props Pattern
+- Define prop interface for each component
+- Use descriptive prop names
+- Provide default values where appropriate
+- Use destructuring for props
+
+## State Management
+- Use React hooks for state
+- Isolate state to appropriate component level
+- Use context for global state when necessary
+
+## Example Project Card
+```tsx
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+
+interface ProjectCardProps {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  featured?: boolean;
+}
+
+export const ProjectCard = ({ 
+  id, 
+  title, 
+  description, 
+  imageUrl, 
+  technologies, 
+  featured = false 
+}: ProjectCardProps) => {
+  return (
+    <motion.div 
+      className={`
+        relative overflow-hidden rounded-lg shadow-lg
+        bg-white dark:bg-gray-800
+        ${featured ? 'col-span-2' : 'col-span-1'}
+      `}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Link href={`/projects/${id}`}>
+        <div className="relative h-48 w-full">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2">{title}</h3>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {technologies.map(tech => (
+              <span 
+                key={tech}
+                className="px-2 py-1 bg-blue-100 dark:bg-blue-900 
+                          text-blue-800 dark:text-blue-100 rounded text-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+};

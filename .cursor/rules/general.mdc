@@ -1,0 +1,54 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# General Coding Standards
+
+## Core Principles
+- Write clean, maintainable TypeScript code
+- Follow React best practices using functional components and hooks
+- Prioritize performance optimization
+- Ensure accessible implementations
+
+## File Structure
+- Use consistent file naming: kebab-case for files, PascalCase for components
+- Group related components in directories
+- Keep components focused on single responsibilities
+
+## Code Style
+- Use descriptive variable names
+- Add TypeScript interfaces for all props and data structures
+- Avoid any and unknown types
+- Document complex logic with comments
+
+## Example
+```tsx
+// Good example
+const ProjectCard: React.FC<ProjectProps> = ({ 
+  title, 
+  description, 
+  technologies 
+}) => {
+  return (
+    <div className="card">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div className="technologies">
+        {technologies.map(tech => (
+          <span key={tech}>{tech}</span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Avoid
+function Card(props) {
+  return (
+    <div>
+      <h3>{props.title}</h3>
+      <p>{props.desc}</p>
+    </div>
+  );
+}
